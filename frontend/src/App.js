@@ -1,33 +1,23 @@
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import data from './data';
+import HomeScreen from './screens/HomeScreen';
+import PostScreen from './screens/ProductScreen';
 
 function App() {
   return (
-    <div>
-      <header>
-        <a href="/">The Campaigner</a>
-      </header>
-      <main>
-        <h1>The Posts</h1>
-        <div className="posts">
-          {data.posts.map((post) => (
-            <div className="post" key={post.slug}>
-              <a href={`/post/${post.slug}`}>
-                <img src={post.image} alt={post.image} />
-              </a>
-              <div className="post-info">
-                <a href={`/post/${post.slug}`}>
-                  <p>{post.title}</p>
-                </a>
-                <p>{post.author}</p>
-                <p>{post.date_published}</p>
-                <p>{post.content}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <div>
+        <header>
+          <Link to="/"> The Campaigner </Link>
+        </header>
+        <main>
+          <Routes>
+            <Route path="/post/:slug" element={<PostScreen />} />
+            <Route path="/" element={<HomeScreen />} />
+          </Routes>
+        </main>
+      </div>
+    </BrowserRouter>
   );
 }
 
