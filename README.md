@@ -18,3 +18,17 @@ Create Node.JS Server
 - create route for /api/products
 - return products
 - run npm start
+
+Fetch Products from Backend
+
+- set proxy in package.json
+- npm install axios
+- use state hook
+- use effect hook
+- user reducer hook
+
+Manage State By Reducer Hook
+
+- Define reducer
+- update fetch data
+- get state from useReducer
