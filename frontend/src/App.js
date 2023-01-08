@@ -1,7 +1,7 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
 import HomeScreen from './screens/HomeScreen';
-import PostScreen from './screens/ProductScreen';
+import PostScreen from './screens/PostScreen';
 
 function App() {
   return (
