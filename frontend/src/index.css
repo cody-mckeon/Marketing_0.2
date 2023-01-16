@@ -12,19 +12,12 @@ code {
     monospace;
 }
 
-header {
-  background-color: #d5bdaf;
-  padding: 1rem;
-}
-
-header a {
-  color: #edede9;
-  font-weight: bold;
-  text-decoration: none;
+.site-container {
+  min-height: 100vh;
 }
 
 main {
-  padding: 1rem;
+  flex: 1;
 }
 
 .posts {
