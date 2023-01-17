@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
-import { useState, useEffect, useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import axios from 'axios';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Post from '../components/Post.js';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -45,18 +47,13 @@ function HomeScreen() {
         ) : error ? (
           <div>{error}</div>
         ) : (
-          posts.map((post) => (
-            <div className="post" key={post.slug}>
-              <img src={post.image} alt={post.name} />
-              <Link to={`/post/${post.slug}`}>
-                <p>{post.title}</p>
-              </Link>
-
-              <p>{post.author}</p>
-              <p>{post.date_published}</p>
-              <p>{post.content}</p>
-            </div>
-          ))
+          <Row>
+            {posts.map((post) => (
+              <Col key={post.slug} sm={6} md={4} lg={3} className="mb-3">
+                <Post post={post}></Post>
+              </Col>
+            ))}
+          </Row>
         )}
       </div>
     </div>
