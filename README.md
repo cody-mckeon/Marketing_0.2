@@ -32,3 +32,8 @@ Manage State By Reducer Hook
 - Define reducer
 - update fetch data
 - get state from useReducer
+
+11. Create Product and Rating Component
+    1. create Rating component
+    2. Create Product component
+    3. Use Rating component in Product component
