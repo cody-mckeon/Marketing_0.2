@@ -5,6 +5,7 @@ import Col from 'react-bootstrap/Col';
 import Post from '../components/Post.js';
 import LoadingBox from '../components/LoadingBox.js';
 import MessageBox from '../components/MessageBox.js';
+import { Helmet } from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -42,6 +43,9 @@ function HomeScreen() {
   }, []);
   return (
     <div>
+      <Helmet>
+        <title>The Campaigner</title>
+      </Helmet>
       <h1>The Posts</h1>
       <div className="posts">
         {loading ? (

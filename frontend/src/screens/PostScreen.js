@@ -1,18 +1,16 @@
-import { useEffect, useReducer } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import { useEffect, useReducer } from 'react';
 import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Post from '../components/Post.js';
-import LoadingBox from '../components/LoadingBox.js';
-import MessageBox from '../components/MessageBox.js';
+import ListGroup from 'react-bootstrap/ListGroup';
+import { Helmet } from 'react-helmet-async';
 
 const reducer = (state, action) => {
   switch (action.type) {
     case 'FETCH_REQUEST':
       return { ...state, loading: true };
     case 'FETCH_SUCCESS':
-      return { ...state, posts: action.payload, loading: false };
+      return { ...state, post: action.payload, loading: false };
     case 'FECTH_FAIL':
       return { ...state, loading: false, error: action.payload };
     default:
@@ -23,8 +21,8 @@ const reducer = (state, action) => {
 function PostScreen() {
   const params = useParams();
   const { slug } = params;
-  const [{ loading, error, posts }, dispatch] = useReducer(reducer, {
-    posts: [],
+  const [{ loading, error, post }, dispatch] = useReducer(reducer, {
+    post: [],
     loading: true,
     error: '',
   });
@@ -43,18 +41,26 @@ function PostScreen() {
     };
     fetchData();
   }, [slug]);
-  return (
+  return loading ? (
+    <div>Loading...</div>
+  ) : error ? (
+    <div> {error} </div>
+  ) : (
     <div>
-      <h1>The Posts</h1>
-      <div className="posts">
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row></Row>
-        )}
-      </div>
+      <Row>
+        <img className="img-large" src={post.image} alt={post.title}></img>
+        <ListGroup variant="flush">
+          <ListGroup.Item>
+            <Helmet>
+              <title>{post.title}</title>
+            </Helmet>
+            <h1>{post.title}</h1>
+          </ListGroup.Item>
+          <ListGroup.Item>
+            <p>{post.content}</p>
+          </ListGroup.Item>
+        </ListGroup>
+      </Row>
     </div>
   );
 }

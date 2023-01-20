@@ -1,5 +1,4 @@
 import express from 'express';
-import { restart } from 'nodemon';
 import data from './data.js';
 
 const app = express();
