@@ -40,3 +40,12 @@ Manage State By Reducer Hook
 12. Create Product Details Screen
     1. fetch product from backend
     2. create 3 columns for image, info and action
+13. Create SignIn Screen
+    1. create sign in form
+    2. add email and password
+    3. add signin screen
+14. Connect to MongoDB Database
+    1. create atlas mongodb database
+    2. install local mongodb database
+    3. npm install mongoose
+    4. connect to mongodb database

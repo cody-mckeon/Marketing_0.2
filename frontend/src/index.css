@@ -45,6 +45,11 @@ main {
   max-width: 100%;
   height: 500px;
 }
+
+.small-container {
+  max-width: 600px;
+}
+
 /*
 #edede9
 #d6ccc2
