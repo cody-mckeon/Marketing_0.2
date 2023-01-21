@@ -5,6 +5,7 @@ import PostScreen from './screens/PostScreen';
 import Navbar from 'react-bootstrap/Navbar';
 import Container from 'react-bootstrap/Container';
 import { LinkContainer } from 'react-router-bootstrap';
+import SigninScreen from './screens/SigninScreen';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/post/:slug" element={<PostScreen />} />
+            <Route path="/signin" element={<SigninScreen />} />
             <Route path="/" element={<HomeScreen />} />
           </Routes>
         </main>
