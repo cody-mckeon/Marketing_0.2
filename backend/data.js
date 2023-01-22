@@ -1,7 +1,7 @@
 const data = {
   posts: [
     {
-      id: 1,
+      // id: 1,
       title: 'My First Blog Post',
       slug: 'writer-post-0',
       image: '/images/p1.jpg', // 679 x 829
@@ -11,7 +11,7 @@ const data = {
       tags: ['personal', 'writing'],
     },
     {
-      id: 2,
+      //id: 2,
       title: 'My Second Blog Post',
       slug: 'realestate-post-0',
       image: '/images/p2.jpg',
@@ -21,7 +21,7 @@ const data = {
       tags: ['realestate', 'business'],
     },
     {
-      id: 3,
+      //id: 3,
       title: 'My Third Blog Post',
       slug: 'affiliate-post-0',
       image: '/images/p3.jpg',
