@@ -2,6 +2,8 @@ import express from 'express';
 import data from './data.js';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import seedRouter from './routes/seedRoutes.js';
+import postRouter from './routes/postRoutes.js';
 
 dotenv.config();
 
@@ -16,18 +18,8 @@ mongoose
 
 const app = express();
 
-app.get('/api/posts', (req, res) => {
-  res.send(data.posts);
-});
-
-app.get('/api/posts/slug/:slug', (req, res) => {
-  const post = data.posts.find((x) => x.slug === req.params.slug);
-  if (post) {
-    res.send(post);
-  } else {
-    res.status(404).send({ message: 'Product Not Found' });
-  }
-});
+app.use('/api/seed', seedRouter);
+app.use('/api/posts', postRouter);
 
 const port = process.env.PORT || 8080;
 

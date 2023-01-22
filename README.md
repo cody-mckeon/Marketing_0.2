@@ -49,3 +49,8 @@ Manage State By Reducer Hook
     2. install local mongodb database
     3. npm install mongoose
     4. connect to mongodb database
+15. Seed Sample Products
+    1. create Post model
+    2. create seed route
+    3. use route in server.js
+    4. seed sample post
