@@ -54,3 +54,7 @@ Manage State By Reducer Hook
     2. create seed route
     3. use route in server.js
     4. seed sample post
+16. Seed Sample Users
+    1. create user model
+    2. seed sample users
+    3. create user routes
