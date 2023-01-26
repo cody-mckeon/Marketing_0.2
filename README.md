@@ -58,3 +58,7 @@ Manage State By Reducer Hook
     1. create user model
     2. seed sample users
     3. create user routes
+17. Complete SignIn Screen
+    1. handle submit action
+    2. save token in store and local storage
+    3. show user name in header
