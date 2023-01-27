@@ -11,6 +11,7 @@ import SigninScreen from './screens/SigninScreen';
 import { Store } from './Store';
 import { useContext } from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import SignupScreen from './screens/SignupScreen';
 //Problems pushing to the wrong remote
 
 function App() {
@@ -59,6 +60,7 @@ function App() {
           <Routes>
             <Route path="/post/:slug" element={<PostScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/signup" element={<SignupScreen />} />
             <Route path="/" element={<HomeScreen />} />
           </Routes>
         </main>

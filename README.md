@@ -62,3 +62,7 @@ Manage State By Reducer Hook
     1. handle submit action
     2. save token in store and local storage
     3. show user name in header
+18. Create Sign Up Screen
+    1. create input forms
+    2. handle submit
+    3. create backend api
