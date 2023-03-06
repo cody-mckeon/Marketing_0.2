@@ -12,6 +12,11 @@ import { Store } from './Store';
 import { useContext } from 'react';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import SignupScreen from './screens/SignupScreen';
+import ProfileScreen from './screens/ProfileScreen';
+import ProtectedRoute from './components/ProtectedRoute';
+
+import DashboardScreen from './screens/DashboardScreen';
+import AdminRoute from './components/AdminRoute';
 //Problems pushing to the wrong remote
 
 function App() {
@@ -21,6 +26,7 @@ function App() {
   const signoutHandler = () => {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
+    window.location.href = '/signin';
   };
 
   return (
@@ -53,6 +59,20 @@ function App() {
                   Sign In
                 </Link>
               )}
+
+              {userInfo && userInfo.isAdmin && (
+                <NavDropdown title="Admin" id="admin-nav-dropdown">
+                  <LinkContainer to="/admin/dashboard">
+                    <NavDropdown.Item>Dashboard</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="admin/post">
+                    <NavDropdown.Item>Posts</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="admin/user">
+                    <NavDropdown.Item>Users</NavDropdown.Item>
+                  </LinkContainer>
+                </NavDropdown>
+              )}
             </Container>
           </Navbar>
         </header>
@@ -61,6 +81,32 @@ function App() {
             <Route path="/post/:slug" element={<PostScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
             <Route path="/signup" element={<SignupScreen />} />
+            <Route
+              path="/profile"
+              element={
+                //Creating admin view Any routes that need authentication
+                <ProtectedRoute>
+                  <ProfileScreen />
+                </ProtectedRoute>
+              }
+            />
+            {/* Admin Routes */}
+            <Route
+              path="/admin/dashboard"
+              element={
+                <AdminRoute>
+                  <DashboardScreen />
+                </AdminRoute>
+              }
+            ></Route>
+            <Route
+              path="/admin/posts"
+              element={
+                <AdminRoute>
+                  <DashboardScreen />
+                </AdminRoute>
+              }
+            ></Route>
             <Route path="/" element={<HomeScreen />} />
           </Routes>
         </main>
