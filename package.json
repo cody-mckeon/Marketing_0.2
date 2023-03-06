@@ -1,0 +1,21 @@
+{
+  "name": "marketing_0.2",
+  "version": "1.0.0",
+  "description": "Hosted on render",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd backend && npm intall && cd ../frontend && npm install && npm run build",
+    "start": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cody-mckeon/Marketing_0.2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cody-mckeon/Marketing_0.2/issues"
+  },
+  "homepage": "https://github.com/cody-mckeon/Marketing_0.2#readme"
+}
