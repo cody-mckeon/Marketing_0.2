@@ -66,3 +66,38 @@ Manage State By Reducer Hook
     1. create input forms
     2. handle submit
     3. create backend api
+19. Create Admin Menu
+
+    1. define protected route component
+    2. define admin route component
+    3. add menu for admin in header
+
+20. Create Profile Screen
+
+    1. get user info from context
+    2. show user information
+    3. create user update api
+    4. update user info
+
+21. Publish to Heroku
+
+    1. create and config node project
+    2. serve build folder in frontend folder
+    3. create heroku account
+    4. connect it to github
+    5. create mongodb atlas database
+    6. set database connection in heroku env variables
+    7. Commit and push
+       Probably not going to use Heroku
+
+22. Create Dashboard Screen
+
+    1. create dashboard ui
+    2. implement backend api
+    3. connect ui to backend
+       Going to have to brainstorm this for the blog
+
+23. Manage Products
+    1. Create products list ui
+    2. implement backend api
+    3. fetch data
